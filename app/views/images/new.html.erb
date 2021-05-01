@@ -1,0 +1,17 @@
+<h1>New Photo</h1>
+
+<%= form_with model: @image do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :photo %><br>
+    <%= form.file_field :photo, accept: "image/png, image/x-png,image/jpeg" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
