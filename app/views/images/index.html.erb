@@ -1,10 +1,12 @@
-<h1>Images#index</h1>
+<div>
+  <h1>All Images</h1>
+  <%= link_to 'New image', new_image_path %>
+</div>
 
 <ul>
   <% @images.each do |image| %>
     <li>
-      <a href="/images/<%= image.id %>">
-      <%= image.title %>
+      <%= link_to image.title, image_path(image)%>
     </li>
   <% end %>
 </ul>
