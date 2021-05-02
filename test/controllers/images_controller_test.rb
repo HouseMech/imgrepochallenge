@@ -2,7 +2,6 @@ require "test_helper"
 
 class ImagesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get images_index_url
-    assert_response :success
+    assert_routing "/images", {controller: "images", action: "index"}
   end
 end
