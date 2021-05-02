@@ -12,6 +12,11 @@
   </div>
 
   <div>
+    <%= form.label :tags %>
+    <%= form.text_field :tag_list, value: form.object.tag_list.to_s %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

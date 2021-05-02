@@ -1,2 +1,8 @@
 <h1><%= @image.title %></h1>
 <%= image_tag @image.photo, alt: "Photo"%>
+
+<% @image.tags.each do |tag| %>
+  <li>
+    <%= tag.name %>
+  </li>
+<% end %>
