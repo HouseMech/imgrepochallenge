@@ -13,7 +13,11 @@
 
   <div>
     <%= form.label :tags %>
-    <%= form.text_field :tag_list, value: form.object.tag_list.to_s %>
+    <select style="width: 300px;" class="form-control" multiple="multiple" multiple name="image[tag_list][]" id="image_tag_list" >
+      <% Image.tag_counts.map(&:name).each do |tag| %>
+        <option value="<%= tag %>" <%= "selected" if @image.tag_list.include?(tag) %>><%= tag %></option>
+      <% end %>
+    </select>
   </div>
 
   <div>
