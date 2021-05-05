@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'acts-as-taggable-on', '~> 7.0'
 
+gem 'dhash-vips'
+gem 'image_processing'
+gem 'ruby-vips'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
