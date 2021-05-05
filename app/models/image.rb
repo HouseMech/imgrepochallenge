@@ -1,5 +1,8 @@
 class Image < ApplicationRecord
   require "dhash-vips"
+  after_create_commit :calc_fingerprint
+  #Keep this before the has_one_attached otherwise ActiveStorage's callback
+  #will not have triggered by the time calc_fingerprint runs
 
   has_one_attached :photo
 
@@ -8,7 +11,7 @@ class Image < ApplicationRecord
   validates :title, presence: true
   validates :photo, presence: true
 
-  after_create :calc_fingerprint
+
 
 
   def calc_fingerprint
