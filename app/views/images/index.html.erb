@@ -5,8 +5,8 @@
 
 <%= search_form_for(@q, url: search_image_path ) do |f| %>
 
-  <%= f.label :title_cont %>
-  <%= f.search_field :title_cont %>
+  <%= f.label :title_or_tags_name_cont %>
+  <%= f.search_field :title_or_tags_name_cont %>
 
   <%= f.submit %>
 <% end %>
