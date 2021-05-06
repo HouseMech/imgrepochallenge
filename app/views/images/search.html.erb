@@ -1,0 +1,7 @@
+<h1>Your Results</h1>
+
+<% @results.each do |image| %>
+  <li>
+    <%= link_to image.title, image_path(image)%>
+  </li>
+<% end %>
