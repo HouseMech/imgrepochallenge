@@ -1,9 +1,9 @@
 require "test_helper"
 
-class ImageTest < ActiveSupport::TestCase
+class ImageTest < ActionDispatch::IntegrationTest
   test "should not save image without title" do
     image = Image.new
-    #Need to find a way to add a temporary image to test case
+    image.photo = fixture_file_upload('coconut.jpg')
     assert_not image.save, "Saved the image without a title"
   end
 
