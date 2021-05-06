@@ -12,6 +12,9 @@ class Image < ApplicationRecord
   validates :photo, presence: true
 
 
+  def photo_thumbnail
+    self.photo.variant(resize: "100x100").processed
+  end
 
 
   def calc_fingerprint

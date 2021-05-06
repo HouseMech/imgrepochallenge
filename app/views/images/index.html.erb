@@ -14,6 +14,9 @@
 <ul>
   <% @images.each do |image| %>
     <li>
+      <% if image.photo.attached? %>
+        <%= image_tag image.photo_thumbnail, style: "max-width: 100px" %>
+      <% end %>
       <%= link_to image.title, image_path(image)%>
     </li>
   <% end %>
