@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'acts-as-taggable-on', '~> 7.0'
 
+gem 'ransack', github: 'activerecord-hackery/ransack'
+
 gem 'dhash-vips'
 gem 'image_processing'
 gem 'ruby-vips'
