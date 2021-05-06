@@ -3,6 +3,14 @@
   <%= link_to 'New image', new_image_path %>
 </div>
 
+<%= search_form_for(@q, url: search_image_path ) do |f| %>
+
+  <%= f.label :title_or_tags_name_cont %>
+  <%= f.search_field :title_or_tags_name_cont %>
+
+  <%= f.submit %>
+<% end %>
+
 <ul>
   <% @images.each do |image| %>
     <li>

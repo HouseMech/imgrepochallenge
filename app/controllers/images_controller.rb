@@ -1,6 +1,12 @@
 class ImagesController < ApplicationController
   def index
+    @q = Image.ransack(params[:q])
     @images = Image.all
+  end
+
+  def search
+      @q = Image.ransack(params[:q])
+      @results = @q.result()
   end
 
   def new
