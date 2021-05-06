@@ -6,7 +6,7 @@ class ImagesController < ApplicationController
 
   def search
       @q = Image.ransack(params[:q])
-      @results = @q.result()
+      @results = @q.result(distinct: true)
   end
 
   def new
