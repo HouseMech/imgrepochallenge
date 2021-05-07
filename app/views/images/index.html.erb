@@ -11,6 +11,8 @@
   <%= f.submit %>
 <% end %>
 
+<%= paginate @images %>
+
 <ul>
   <% @images.each do |image| %>
     <li>

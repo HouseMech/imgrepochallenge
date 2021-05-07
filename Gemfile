@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#kaminari gem for pagination
+gem 'kaminari'
+
 gem 'acts-as-taggable-on', '~> 7.0'
 
 gem 'ransack', github: 'activerecord-hackery/ransack'

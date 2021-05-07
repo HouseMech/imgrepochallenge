@@ -1,5 +1,6 @@
-<%= link_to 'Back', root_path %>
 <h1><%= @image.title %></h1>
+<%= link_to 'Back', root_path %>
+<br>
 <%= image_tag @image.photo, alt: "Photo"%>
 
 <%= link_to "See similar images", search_image_path(:id => @image.id, :similar => "true") %>
