@@ -10,10 +10,12 @@ import "channels";
 import $ from 'jquery';
 import Select2 from 'select2';
 
+
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
 
 require('jquery');
+require("bootstrap")
 require('select.js');
