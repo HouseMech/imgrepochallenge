@@ -1,6 +1,7 @@
 <h1>Your Results</h1>
 <%= link_to 'Back', root_path %>
 
+<%= paginate @results %>
 
 <% @results.each do |image| %>
   <li>

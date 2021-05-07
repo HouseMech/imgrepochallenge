@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
   def index
     @q = Image.ransack(params[:q])
-    @images = Image.all
+    @images = Image.all.page params[:page]
   end
 
   def search
@@ -13,10 +13,10 @@ class ImagesController < ApplicationController
             image_ids.push(image.id)
           end
         end
-        @results = Image.where(id: image_ids)
+        @results = Image.where(id: image_ids).page params[:page]
       else
         @q = Image.ransack(params[:q])
-        @results = @q.result(distinct: true)
+        @results = @q.result(distinct: true).page params[:page]
       end
   end
 
