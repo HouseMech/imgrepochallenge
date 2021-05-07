@@ -2,6 +2,8 @@
 <h1><%= @image.title %></h1>
 <%= image_tag @image.photo, alt: "Photo"%>
 
+<%= link_to "See similar images", search_image_path(:id => @image.id, :similar => "true") %>
+
 <% @image.tags.each do |tag| %>
   <li>
     <%= tag.name %>

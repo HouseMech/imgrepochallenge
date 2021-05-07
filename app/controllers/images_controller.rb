@@ -5,8 +5,19 @@ class ImagesController < ApplicationController
   end
 
   def search
-      @q = Image.ransack(params[:q])
-      @results = @q.result(distinct: true)
+      if params[:similar]
+        @image = Image.find(params[:id])
+        image_ids = []
+        Image.where.not(["id = ?", @image.id]).each do |image|
+          if @image.compare_to_image(image)
+            image_ids.push(image.id)
+          end
+        end
+        @results = Image.where(id: image_ids)
+      else
+        @q = Image.ransack(params[:q])
+        @results = @q.result(distinct: true)
+      end
   end
 
   def new

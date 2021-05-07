@@ -11,6 +11,14 @@ class Image < ApplicationRecord
   validates :title, presence: true
   validates :photo, presence: true
 
+  def compare_to_image(image)
+    distance = DHashVips::DHash.hamming Integer(self.fingerprint), Integer(image.fingerprint)
+    if distance < 25
+      return true
+    else
+      return false
+    end
+  end
 
   def photo_thumbnail
     self.photo.variant(resize: "100x100").processed
