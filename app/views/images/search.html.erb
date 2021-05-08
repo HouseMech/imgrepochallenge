@@ -1,10 +1,7 @@
-<h1>Your Results</h1>
-<%= link_to 'Back', root_path %>
-
-<%= paginate @results %>
-
-<% @results.each do |image| %>
-  <li>
-    <%= link_to image.title, image_path(image)%>
-  </li>
-<% end %>
+<div class="container">
+  <h3>Your Results</h3>
+  <div>
+    <%= link_to 'Back', root_path, :class => "btn btn-primary" %>
+  </div>
+  <%= render "/shared/images" %>
+</div>
