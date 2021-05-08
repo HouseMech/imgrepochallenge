@@ -23,7 +23,7 @@ class Image < ApplicationRecord
   end
 
   def photo_thumbnail
-    self.photo.variant(resize: "100x100").processed
+    self.photo.variant(resize: "200x200").processed
   end
 
 
