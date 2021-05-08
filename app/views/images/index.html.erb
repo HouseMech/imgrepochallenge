@@ -1,25 +1,3 @@
-<div>
-  <h1>All Images</h1>
-  <%= link_to 'New image', new_image_path %>
+<div class="container">
+  <%= render "/shared/images" %>
 </div>
-
-<%= search_form_for(@q, url: search_image_path ) do |f| %>
-
-  <%= f.label :title_or_tags_name_cont %>
-  <%= f.search_field :title_or_tags_name_cont %>
-
-  <%= f.submit %>
-<% end %>
-
-<%= paginate @images %>
-
-<ul>
-  <% @images.each do |image| %>
-    <li>
-      <% if image.photo.attached? %>
-        <%= image_tag image.photo_thumbnail, style: "max-width: 100px" %>
-      <% end %>
-      <%= link_to image.title, image_path(image)%>
-    </li>
-  <% end %>
-</ul>

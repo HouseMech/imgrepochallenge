@@ -12,6 +12,19 @@
   </head>
 
   <body>
+    <%= render "/shared/header" %>
+
+    <% if flash[:alert] %>
+        <div class="field_with_errors alert alert-danger">
+          <%= flash[:alert] %>
+        </div>
+    <% end %>
+    <% if flash[:notice] %>
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
