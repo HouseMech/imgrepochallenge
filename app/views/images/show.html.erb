@@ -1,12 +1,23 @@
-<h1><%= @image.title %></h1>
-<%= link_to 'Back', root_path %>
-<br>
-<%= image_tag @image.photo, alt: "Photo"%>
+<div class="container">
 
-<%= link_to "See similar images", search_image_path(:id => @image.id, :similar => "true") %>
 
-<% @image.tags.each do |tag| %>
-  <li>
-    <%= tag.name %>
-  </li>
-<% end %>
+  <%= link_to 'Back', root_path, :class => "btn btn-primary" %>
+  <%= link_to "See similar images (Experimental)", search_image_path(:id => @image.id, :similar => "true"), :class => "btn btn-info" %>
+  <br>
+
+  <div class="card" style="max-width: 600px;">
+    <%= image_tag @image.photo, alt: "Photo", :class => "card-img-top"%>
+    <div class="card-body">
+      <h2 class="card-title"><%= @image.title %></h2>
+      <div>
+        <h5 class="card-text">Tags</h5>
+        <% @image.tags.each do |tag| %>
+          <li>
+            <%= tag.name %>
+          </li>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
