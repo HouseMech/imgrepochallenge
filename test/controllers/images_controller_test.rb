@@ -15,6 +15,11 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get search" do
+    get search_image_url
+    assert_response :success
+  end
+
   test "should create image" do
     assert_difference('Image.count') do
        post images_url, params: { image: { title: @image.title, photo:  fixture_file_upload("coconut.jpg") } }
