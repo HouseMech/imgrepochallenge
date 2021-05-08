@@ -1,0 +1,38 @@
+<%= search_form_for(@q, url: search_image_url, :class => "d-flex" ) do |f| %>
+  <%= f.search_field :title_or_tags_name_cont, placeholder: "Search by title or tag", :class => "form-control me-2"%>
+  <%= f.submit :class => "btn btn-sm btn-secondary" %>
+<% end %>
+
+<%= paginate @results %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Image</th>
+      <th scope="col">Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @results.each do |image| %>
+    <tr>
+      <th scope="row"><%= image.id %></th>
+      <td>
+        <%= link_to image.title, image_path(image)%>
+      </td>
+
+        <% if image.photo.attached? %>
+          <td>
+          <%= image_tag image.photo_thumbnail, :class => "img-thumbnail" %>
+          </td>
+          <td>
+            <% image.tags.each do |tag| %>
+                <%= tag.name %>
+            <% end %>
+          </td>
+        <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

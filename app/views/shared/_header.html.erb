@@ -1,0 +1,13 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+    <%= link_to root_path, class: "navbar-brand" do%>
+      <h2 class="brand-title">Image Repository </h2>
+    <% end %>
+
+    <% if !current_page?(action: 'new') %>
+      <div class="d-flex">
+        <%= link_to 'New image', new_image_path, :class => "btn btn-primary" %>
+      </div>
+    <% end %>
+  </nav>
+</div>
