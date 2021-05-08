@@ -1,40 +1,28 @@
-<%= search_form_for(@q, url: search_image_url, :class => "d-flex" ) do |f| %>
-  <%= f.search_field :title_or_tags_name_cont, placeholder: "Search by title or tag", :class => "form-control me-2"%>
-  <%= f.submit :class => "btn btn-sm btn-secondary" %>
-<% end %>
-
 <p>
 <%= paginate @results %>
 </p>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Title</th>
-      <th scope="col">Image</th>
-      <th scope="col">Tags</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="row justify-content-start">
   <% @results.each do |image| %>
-    <tr>
-      <th scope="row"><%= image.id %></th>
-      <td>
-        <%= link_to image.title, image_path(image)%>
-      </td>
-
+    <div style="max-width:200px;" class="col-4">
+      <div class="card">
         <% if image.photo.attached? %>
-          <td>
-          <%= image_tag image.photo_thumbnail, :class => "img-thumbnail" %>
-          </td>
-          <td>
-            <% image.tags.each do |tag| %>
-                <%= tag.name %>
-            <% end %>
-          </td>
+            <%= image_tag image.photo_thumbnail, alt: "Photo", :class => "img-thumbnail card-img-top" %>
         <% end %>
-    </tr>
+        <div class="card-body">
+          <h5><%= link_to image.title, image_path(image), :class => "card-title"%></h5>
+          <% if image.tags.any? %>
+            <u><p class="card-text">Tags</p></u>
+            <p class="card-text">
+            <% image.tags.each do |tag| %>
+              <%= tag.name %>
+            <% end %>
+            </p>
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
   <% end %>
-  </tbody>
-</table>
+</div>
