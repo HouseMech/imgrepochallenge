@@ -1,6 +1,5 @@
 class ImagesController < ApplicationController
   def index
-    @q = Image.ransack(params[:q])
     @results = Image.all.page params[:page]
   end
 
