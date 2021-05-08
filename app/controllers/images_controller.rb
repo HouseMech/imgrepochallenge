@@ -1,10 +1,11 @@
 class ImagesController < ApplicationController
   def index
     @q = Image.ransack(params[:q])
-    @images = Image.all.page params[:page]
+    @results = Image.all.page params[:page]
   end
 
   def search
+
       if params[:similar]
         @image = Image.find(params[:id])
         image_ids = []
