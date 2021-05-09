@@ -9,26 +9,28 @@ Challenge for the Shopify Backend Developer internship. This project is a basic 
 
 ## Installation
 
-After downloading the project to your computer, navigate to the project folder and run the following command:
+After downloading the project to your computer, navigate to the project folder and run the bundler
+
 
 ```shell
-bundle
+$ cd imgrepochallenge
+$ bundle
 ```
 
 Next create the database using:
 
 ```shell
-rails db:create
+$ rails db:create
 ```
 
 and
 
 ```shell
-rails db:migrate
+$ rails db:migrate
 ```
 
 Finally start the localhost server with 
 
 ```shell
-rails s
+$ rails s
 ```
