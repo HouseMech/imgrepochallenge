@@ -1,16 +1,23 @@
 # imgrepochallenge
 
-Challenge for the Shopify Backend Developer internship. This project is a basic image repository allowing users to publish their own images and include a title and relevant tags. Users can search for images via tags and titles and an experimental "similar image" feature that is akin to a more finicky reverse image search. 
+Challenge for the Shopify Backend Developer internship. This project is a basic image repository allowing users to publish their own images and include a title and relevant tags. Users can search for images via tags and titles.
+
+Note: dhash-vips was originally used for a reverse image search function but the method was far too finicky to be useful so it was removed.
 
 ## Dependencies
 
 * ruby 2.6.3 or newer
+* yarn
+* node >= 10.17.0
 * MySQL
 
 ## Installation
 
-After downloading the project to your computer, navigate to the project folder and run the bundler
+You will need to have the VIPs library installed as dhash-vips depends on it. 
 
+[Vips Install instructions](https://libvips.github.io/libvips/install.html).
+
+After downloading the project to your computer, navigate to the project folder and run the bundler
 
 ```shell
 $ cd imgrepochallenge
