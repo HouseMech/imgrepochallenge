@@ -4,20 +4,8 @@ class ImagesController < ApplicationController
   end
 
   def search
-
-      if params[:similar]
-        @image = Image.find(params[:id])
-        image_ids = []
-        Image.where.not(["id = ?", @image.id]).each do |image|
-          if @image.compare_to_image(image)
-            image_ids.push(image.id)
-          end
-        end
-        @results = Image.where(id: image_ids).page params[:page]
-      else
-        @q = Image.ransack(params[:q])
-        @results = @q.result(distinct: true).page params[:page]
-      end
+    @q = Image.ransack(params[:q])
+    @results = @q.result(distinct: true).page params[:page]
   end
 
   def new
