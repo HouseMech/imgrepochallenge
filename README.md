@@ -1,24 +1,27 @@
-# README
+# imgrepochallenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Challenge for the Shopify Backend Developer internship. This project is a basic image repository allowing users to publish their own images and include a title and relevant tags. Users can search for images via tags and titles and an experimental "similar image" feature that is akin to a more finicky reverse image search. 
 
-Things you may want to cover:
+## Dependencies
 
-* Ruby version
+* ruby 2.6.3 or newer
+* MySQL
 
-* System dependencies
+## Installation
 
-* Configuration
+After downloading the project to your computer, navigate to the project folder and run the following command:
 
-* Database creation
+```bundle
+```
 
-* Database initialization
+Next create the database using:
 
-* How to run the test suite
+```rails db:create```
 
-* Services (job queues, cache servers, search engines, etc.)
+and
 
-* Deployment instructions
+```rails db:migrate```
 
-* ...
+Finally start the localhost server with 
+
+```rails s```
