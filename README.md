@@ -17,7 +17,7 @@ $ cd imgrepochallenge
 $ bundle
 ```
 
-Next you will need to setup database.yml. You can use database.yml.sample as a base. Fill in the password field with your appropriate database credentials.
+Next you will need to setup database.yml. You can use config/database.yml.sample as a base. Fill in the password field with your appropriate database credentials.
 
 ```shell
 default: &default
