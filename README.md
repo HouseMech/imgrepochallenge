@@ -55,3 +55,12 @@ Finally start the localhost server with
 ```shell
 $ rails s
 ```
+
+## Testing
+
+If you would like to run the test suite, you can run the full test list using:
+
+```shell
+$ rails test
+```
+
