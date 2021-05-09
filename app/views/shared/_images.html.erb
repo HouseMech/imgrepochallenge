@@ -20,7 +20,7 @@
               <u><p class="card-text">Tags</p></u>
               <p class="card-text">
               <% image.tags.each do |tag| %>
-                <%= tag.name %>
+                <%= link_to tag.name, search_image_path(:tag => tag.name ) %>
               <% end %>
               </p>
             <% end %>
