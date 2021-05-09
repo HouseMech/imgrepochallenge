@@ -11,16 +11,24 @@ Challenge for the Shopify Backend Developer internship. This project is a basic 
 
 After downloading the project to your computer, navigate to the project folder and run the following command:
 
-```bundle```
+```shell
+bundle
+```
 
 Next create the database using:
 
-```rails db:create```
+```shell
+rails db:create
+```
 
 and
 
-```rails db:migrate```
+```shell
+rails db:migrate
+```
 
 Finally start the localhost server with 
 
-```rails s```
+```shell
+rails s
+```
