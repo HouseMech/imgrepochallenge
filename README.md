@@ -17,7 +17,19 @@ $ cd imgrepochallenge
 $ bundle
 ```
 
-Next create the database using:
+Next you will need to setup database.yml. You can use database.yml.sample as a base. Fill in the password field with your appropriate database credentials.
+
+```shell
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: <insert password here>
+  host: localhost
+```
+
+Afterwards, in your terminal, run:
 
 ```shell
 $ rails db:create
