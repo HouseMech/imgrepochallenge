@@ -3,26 +3,29 @@
 </p>
 
 <div class="row justify-content-start">
-  <% @results.each do |image| %>
-    <div style="max-width:200px;" class="col-4">
-      <div class="card">
-        <% if image.photo.attached? %>
-            <%= image_tag image.photo_thumbnail, alt: "Photo", :class => "img-thumbnail card-img-top" %>
-        <% end %>
-        <div class="card-body">
-          <h5><%= link_to image.title, image_path(image), :class => "card-title"%></h5>
-          <% if image.tags.any? %>
-            <u><p class="card-text">Tags</p></u>
-            <p class="card-text">
-            <% image.tags.each do |tag| %>
-              <%= tag.name %>
-            <% end %>
-            </p>
+  <div class="card-group">
+    <% @results.each do |image| %>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card">
+          <% if image.photo.attached? %>
+              <%= image_tag image.photo_thumbnail, alt: "Photo", :class => "img-thumbnail card-img-top" %>
           <% end %>
+          <div class="card-body">
+            <h5><%= link_to image.title, image_path(image), :class => "card-title"%></h5>
+            <% if image.tags.any? %>
+              <u><p class="card-text">Tags</p></u>
+              <p class="card-text">
+              <% image.tags.each do |tag| %>
+                <%= tag.name %>
+              <% end %>
+              </p>
+            <% end %>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"><%=time_ago_in_words(image.created_at) %> ago</small>
+          </div>
         </div>
-
       </div>
-
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
