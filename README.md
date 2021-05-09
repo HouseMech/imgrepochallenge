@@ -7,8 +7,8 @@ Note: dhash-vips was originally used for a reverse image search function but the
 ## Dependencies
 
 * ruby 2.6.3 or newer
-* yarn
 * node >= 10.17.0
+* yarn
 * MySQL
 
 ## Installation
@@ -18,6 +18,12 @@ After downloading the project to your computer, navigate to the project folder a
 ```shell
 $ cd imgrepochallenge
 $ bundle
+```
+
+Once that is finished, run yarn to install Javascript dependencies
+
+```shell
+$ yarn install
 ```
 
 Next you will need to setup database.yml. You can use config/database.yml.sample as a base. Fill in the password field with your appropriate database credentials.
