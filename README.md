@@ -13,10 +13,6 @@ Note: dhash-vips was originally used for a reverse image search function but the
 
 ## Installation
 
-You will need to have the VIPs library installed as dhash-vips depends on it. 
-
-[Vips Install instructions](https://libvips.github.io/libvips/install.html).
-
 After downloading the project to your computer, navigate to the project folder and run the bundler
 
 ```shell
