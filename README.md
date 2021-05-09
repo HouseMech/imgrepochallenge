@@ -11,8 +11,7 @@ Challenge for the Shopify Backend Developer internship. This project is a basic 
 
 After downloading the project to your computer, navigate to the project folder and run the following command:
 
-```bundle
-```
+```bundle```
 
 Next create the database using:
 
