@@ -4,8 +4,12 @@ class ImagesController < ApplicationController
   end
 
   def search
-    @q = Image.ransack(params[:q])
-    @results = @q.result(distinct: true).page params[:page]
+    if params[:tag]
+      @results = Image.tagged_with(params[:tag]).page params[:page]
+    else
+      @results = @q.result(distinct: true).page params[:page]
+    end
+
   end
 
   def new
